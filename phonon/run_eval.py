@@ -381,8 +381,10 @@ def run_ttfa(args, checkpoint, distribution, hashes, runtime_hashes, quality_roo
 
 
 def main(args):
-    if args.device != "cpu" or args.split != "en":
-        raise ValueError("This q8_0 path supports English CPU only; A100/CUDA TTFA is unavailable.")
+    if args.device != "cpu" or args.split not in ("en", "fr", "de", "es"):
+        raise ValueError("This q8_0 path supports English, French, German and Spanish on CPU only.")
+    if args.ttfa_probe and args.split != "en":
+        raise ValueError("TTFA measures the English split only; A100/CUDA TTFA is unavailable.")
     if getattr(args, "ttfa_mode", "blocking") not in ("blocking", "streaming"):
         raise ValueError("Select blocking or streaming TTFA explicitly.")
     if args.ttfa_probe and (getattr(args, "ttfa_flavor", "cpu-upgrade") != "cpu-upgrade"
