@@ -643,7 +643,7 @@ if __name__ == "__main__":
     parser.add_argument("--dataset_revision", help="Immutable dataset commit; resolves current Hub revision if omitted.")
     parser.add_argument("--temperature", type=float, default=0.3)
     parser.add_argument("--eos_threshold", type=float, default=4.0)
-    parser.add_argument("--conditions", type=json.loads, default={"num_speakers": "1", "duration_delta": 0.0})
+    parser.add_argument("--conditions", type=json.loads, default={"num_speakers": "1", "duration_delta": 0.3})
     parser.add_argument("--rewrites", choices=("default", "all", "none"), default="default")
     parser.add_argument("--threads", type=int, default=1)
     parser.add_argument("--ttfa_output_root", help="Separate private root for TTFA sidecars only.")
