@@ -49,7 +49,7 @@ MODEL_REVISIONS = {
 # Voice cloning: voices/<SHA-256 of a reference clip>.safetensors holds that clip's speaker latents,
 # and index.json maps "<dataset>/<config>/<split>" to {row id: SHA-256}.
 CLONE_VOICES_REPO = "gradium/phonon-leaderboard-clone-voices"
-CLONE_VOICES_REVISION = "371ec7081c59ca7a50b6c2bdf819409b74bd3e7a"
+CLONE_VOICES_REVISION = "3f2a9ece98f4296c57db4f797591a9e021ee11a9"
 
 
 def file_hash(path):
